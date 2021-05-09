@@ -4,7 +4,7 @@ const data = require('./data')
 
 exports.store = async (req, res, next) => {
   try {
-      const item = data.data
+      const item = data['DATA']
       res.send(item)
   }
   catch(error){

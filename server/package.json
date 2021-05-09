@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development nodemon app"
+    "start": "NODE_ENV=development nodemon app",
+    "start2": "nodemon app.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
