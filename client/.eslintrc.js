@@ -23,5 +23,8 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'linebreak-style': 0,
     "import/prefer-default-export": 0,
+    "no-unused-vars": 0,
+    "react/prop-types" : 0,
+    "react/destructuring-assignment":0
   },
 };
