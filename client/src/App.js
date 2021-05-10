@@ -43,7 +43,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #eff3f7;
     height: 100%;
     width: 100%;
-    overflow: hidden;
   }
   #root, #container {
     width: 100%;

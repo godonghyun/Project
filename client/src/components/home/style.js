@@ -20,8 +20,8 @@ export const TitleDiv = styled.div`
 `;
 export const MenuCard = styled.div`
     width: 80%;
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin-top: 15%;
+    margin-bottom: 10%;
     max-width: none;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ export const MenuCard = styled.div`
     & > a {
         text-decoration: none;
         color :black;
-        width: 100%;
+        width: 70%;
     }
 `;
 export const MenuItem = styled.a`
@@ -40,7 +40,6 @@ export const MenuItem = styled.a`
     text-decoration: none;
     text-transform: none;
     margin: 10px;
-    width: 70%;
     height: 100px;
     border: 1px solid #e2e2e2;
     display: flex;
@@ -69,3 +68,35 @@ export const MenuTitle = styled.div`
     font-size: 1.2em;
     font-weight: bold;
 `;
+
+export const SliderBox = styled.div`
+  margin: 5% auto;
+  width: 90%;
+  .slick-prev:before {
+    opacity: 1;
+    color: slategray;
+    left: 0;
+    font-size: 30px;
+  }
+  .slick-next:before {
+    opacity: 1;
+    color: slategray;
+    font-size: 30px;
+  }
+`
+export const SliderContainer = styled.div`
+  display: flex !important;
+  justify-content: center;
+`
+export const SliderImage = styled.div`
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+`
+export const SliderTitle = styled.div`
+    font-size: 2.5em;
+    color: brown;
+`
