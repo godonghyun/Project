@@ -11,28 +11,22 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     align-items: center;
 `;
-export const TitleDiv = styled.div`
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #232323;
-`;
+
 export const MenuCard = styled.div`
-    width: 80%;
-    margin-top: 15%;
+    width: 70%;
     margin-bottom: 10%;
     max-width: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 20px;
     & > a {
         text-decoration: none;
         color :black;
-        width: 70%;
+        width: 200px;
     }
+
 `;
 export const MenuItem = styled.a`
     border-radius: 3px;
@@ -65,38 +59,36 @@ export const MenuIcon = styled.div`
 `;
 
 export const MenuTitle = styled.div`
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.3em;
 `;
 
-export const SliderBox = styled.div`
-  margin: 5% auto;
-  width: 90%;
-  .slick-prev:before {
-    opacity: 1;
-    color: slategray;
-    left: 0;
-    font-size: 30px;
-  }
-  .slick-next:before {
-    opacity: 1;
-    color: slategray;
-    font-size: 30px;
-  }
-`
-export const SliderContainer = styled.div`
-  display: flex !important;
-  justify-content: center;
-`
-export const SliderImage = styled.div`
-  width: 150px;
-  height: 150px;
-  background-size: contain;
-  background-image: url(${(props) => props.src});
-  background-repeat: no-repeat;
-  background-position: center;
-`
-export const SliderTitle = styled.div`
-    font-size: 2.5em;
-    color: brown;
-`
+export const TitleImage = styled.img`
+    width: 200px;
+`;
+
+export const TitleContainer = styled.div`
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    @media only screen and (max-width: 800px) {
+        margin-top: 30%;
+    }
+`;
+
+export const TitleDiv = styled.div`
+    color: #232323;
+    font-size: 3em;
+    margin-top: 10px;
+    text-align: center;
+`;
+
+export const TitleBox = styled.div`
+`;
+
+export const TitleSubDiv = styled.div`
+    color: #615f5f;
+    font-size: 2em;
+    margin-top: 10px;
+    text-align: center;
+`;

@@ -8,6 +8,8 @@ export const NavBarWrapper = styled.div`
   font-weight: bold;
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  background: #eceeef;
 `;
 
 export const Title = styled.div`

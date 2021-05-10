@@ -1,21 +1,33 @@
 import React from 'react';
-import { BsBucket, BsBarChart } from "react-icons/bs";
+import { BsBucket, BsBarChart, BsCheck, BsFillStarFill, BsMusicNoteBeamed } from "react-icons/bs";
+import { AiOutlineQuestion, AiFillStar } from "react-icons/ai";
+import { RiStore2Line, RiLineChartFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
-import Slider from "react-slick";
 import * as S from './style'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ACHIEVEMENT_IMAGES, SLIDER_SETTINGS } from '../../lib/constants/slider'
 
 function Home() {
 	return (
 		<S.HomeContainer>
-			<S.TitleDiv />
+			<S.TitleContainer>
+				<S.TitleImage src="/images/store.png" />
+				<S.TitleBox>
+					<S.TitleDiv>착한 소비를 위한 서비스</S.TitleDiv>
+					<S.TitleSubDiv>Service for Ethical Consumption</S.TitleSubDiv>
+				</S.TitleBox>
+			</S.TitleContainer>
 			<S.MenuCard>
 				<Link to="/shop">
 					<S.MenuItem>
 						<S.MenuIcon>
-							<BsBucket />
+							<AiOutlineQuestion />
+						</S.MenuIcon>
+						<S.MenuTitle>착한 소비란?</S.MenuTitle>
+					</S.MenuItem>
+				</Link>
+				<Link to="/shop">
+					<S.MenuItem>
+						<S.MenuIcon>
+							<RiStore2Line />
 						</S.MenuIcon>
 						<S.MenuTitle>착한 업소 정보 얻기</S.MenuTitle>
 					</S.MenuItem>
@@ -23,7 +35,7 @@ function Home() {
 				<Link to="/price">
 					<S.MenuItem>
 						<S.MenuIcon>
-							<BsBarChart />
+							<RiLineChartFill />
 						</S.MenuIcon>
 						<S.MenuTitle>착한 물가 정보 얻기</S.MenuTitle>
 					</S.MenuItem>
@@ -31,24 +43,12 @@ function Home() {
 				<Link to="/about">
 					<S.MenuItem>
 						<S.MenuIcon>
-							<BsBarChart />
+							<BsMusicNoteBeamed />
 						</S.MenuIcon>
 						<S.MenuTitle>간단한 기능?</S.MenuTitle>
 					</S.MenuItem>
 				</Link>
 			</S.MenuCard>
-			<S.SliderTitle>⭐오늘의 추천 가게⭐</S.SliderTitle>
-			<S.SliderBox>
-				<Slider {...SLIDER_SETTINGS}>
-					{
-						ACHIEVEMENT_IMAGES.map((image) => (
-							<S.SliderContainer>
-								<S.SliderImage src={image} />
-							</S.SliderContainer>
-						))
-					}
-				</Slider>
-			</S.SliderBox>
 		</S.HomeContainer>
 	);
 }
