@@ -20,6 +20,15 @@ function Sidebar(props) {
 
                 <S.Divider />
 
+                <Link to="/intro">
+                    <S.ItemBox onClick={toggleHandler}>
+                        <BsBucket />
+                        <S.ItemMenu>착한 소비란?</S.ItemMenu>
+                    </S.ItemBox>
+                </Link>
+
+                <S.Divider />
+
                 <Link to="/shop">
                     <S.ItemBox onClick={toggleHandler}>
                         <BsBucket />
