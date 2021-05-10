@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+// Use body-parser
+router.use(express.json());
+
 // Import Router End Point
 const storeRouter = require('./storeRouter')
 const priceRouter = require('./priceRouter')
