@@ -16,7 +16,7 @@ function Home() {
 				</S.TitleBox>
 			</S.TitleContainer>
 			<S.MenuCard>
-				<Link to="/shop">
+				<Link to="/intro">
 					<S.MenuItem>
 						<S.MenuIcon>
 							<AiOutlineQuestion />

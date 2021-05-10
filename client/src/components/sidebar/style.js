@@ -18,6 +18,7 @@ export const Container = styled.div`
 
 export const SidebarContainer = styled.div`
     background: white;
+    width: 250px;
     position: absolute;
     height: 100%;
     right: 0;

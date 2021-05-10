@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavBarWrapper = styled.div`
   display: flex;
-  padding: 30px;
+  padding: 20px 50px 20px 50px;
   justify-content: space-between;
   font-size: 2em;
   font-weight: bold;

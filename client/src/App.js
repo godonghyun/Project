@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import PricePage from './pages/PricePage';
+import IntroPage from './pages/IntroPage';
 import NavBar from './components/navbar';
 import Sidebar from './components/sidebar'
 
@@ -18,6 +19,7 @@ function App() {
       <NavBar toggle={toggle} toggleHandler={toggleHandler}/>
       <Switch>
         <Route path="/" exact component={HomePage} />
+        <Route path="/intro" component={IntroPage} />
         <Route path="/shop" component={ShopPage} />
         <Route path="/price" component={PricePage} />
       </Switch>
