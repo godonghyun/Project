@@ -30,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
   * {
     padding: 0px;
     margin: 0px;
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Hanna', fantasy;
     box-sizing: border-box;
   }
   a {
@@ -42,7 +43,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #eff3f7;
     height: 100%;
     width: 100%;
-    overflow: hidden;
   }
   #root, #container {
     width: 100%;

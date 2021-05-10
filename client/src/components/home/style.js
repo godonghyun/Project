@@ -11,28 +11,22 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     align-items: center;
 `;
-export const TitleDiv = styled.div`
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #232323;
-`;
+
 export const MenuCard = styled.div`
-    width: 80%;
-    margin-top: 20px;
-    margin-bottom: 0;
+    width: 70%;
+    margin-bottom: 10%;
     max-width: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 20px;
     & > a {
         text-decoration: none;
         color :black;
-        width: 100%;
+        width: 200px;
     }
+
 `;
 export const MenuItem = styled.a`
     border-radius: 3px;
@@ -40,7 +34,6 @@ export const MenuItem = styled.a`
     text-decoration: none;
     text-transform: none;
     margin: 10px;
-    width: 70%;
     height: 100px;
     border: 1px solid #e2e2e2;
     display: flex;
@@ -66,6 +59,36 @@ export const MenuIcon = styled.div`
 `;
 
 export const MenuTitle = styled.div`
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.3em;
+`;
+
+export const TitleImage = styled.img`
+    width: 200px;
+`;
+
+export const TitleContainer = styled.div`
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    @media only screen and (max-width: 800px) {
+        margin-top: 30%;
+    }
+`;
+
+export const TitleDiv = styled.div`
+    color: #232323;
+    font-size: 3em;
+    margin-top: 10px;
+    text-align: center;
+`;
+
+export const TitleBox = styled.div`
+`;
+
+export const TitleSubDiv = styled.div`
+    color: #615f5f;
+    font-size: 2em;
+    margin-top: 10px;
+    text-align: center;
 `;

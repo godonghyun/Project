@@ -25,6 +25,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     "no-unused-vars": 0,
     "react/prop-types" : 0,
-    "react/destructuring-assignment":0
+    "react/destructuring-assignment":0,
+    "react/jsx-props-no-spreading": 0
   },
 };
