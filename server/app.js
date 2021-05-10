@@ -7,7 +7,7 @@ const cors = require('cors');
 // Router Part
 require('dotenv').config();
 const port = process.env.PORT;
-// const port = 5000;
+// const port = 8080;
 const apiRouter = require('./routes/index');
 app.use('/api', apiRouter);
 
