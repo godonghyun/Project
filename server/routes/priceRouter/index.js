@@ -18,6 +18,6 @@ router.get('/market', Controller.getMarket);
 
 router.get('/all', Controller.getPriceAll);
 router.get('/average', Controller.getPriceAverage);
-// router.get('/:gu_code', Controller.getPriceByGu)
+router.get('/:gu_code', Controller.getPriceByGu)
 
 module.exports = router;

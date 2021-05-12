@@ -43,3 +43,13 @@ exports.getPriceAverage = async (req, res, next) => {
   }
 }
 
+exports.getPriceByGu = async (req, res, next) => {
+  try {
+    const items = AVERAGE_DATA['DATA']
+    res.send(items)
+  }
+  catch(error){
+      next(error);
+  }
+}
+
