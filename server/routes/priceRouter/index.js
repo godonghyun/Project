@@ -4,6 +4,7 @@ const Controller = require("./controller");
 
 /* GET home page. */
 router.get('/all', Controller.getPriceAll);
+router.get('/average', Controller.getPriceAverage);
 
 router.get('/test', function(req, res, next) {
   res.send("hello");
