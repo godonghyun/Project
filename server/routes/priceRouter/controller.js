@@ -1,25 +1,61 @@
-const axios = require('axios');
-const Configs = require('../../configs')
+const GU_DATA = require('./data/preprocess/json/GU_DATA.json')
+const MARKET_DATA = require('./data/preprocess/json/MARKET_DATA.json')
+const PRICE_DATA = require('./data/preprocess/json/PRICE_DATA.json')
+const AVERAGE_DATA = require('./data/preprocess/json/AVERAGE_DATA.json')
 
-exports.price = async (req, res, next) => {
+exports.getGuCode = async (req, res, next) => {
   try {
-      const priceDataUrl = `http://apis.data.go.kr/B552895/LocalGovPriceInfoService/getItemPriceResearchSearch?serviceKey=${Configs.priceOptions.serviceKey}&pageNo=${Configs.priceOptions.pageNo}&numOfRows=${Configs.priceOptions.numOfRows}&examin_de=${Configs.priceOptions.examin_de}&prdlst_cd=${Configs.priceOptions.prdlst_cd}&prdlst_nm=${Configs.priceOptions.prdlst_nm}`;
-      axios.get(priceDataUrl)
-      .then((response) => {
-        const {
-          data: {
-            response: {
-              body: {
-                items: { item },
-              },
-            },
-          },
-        } = response;
-        res.send(item);
-      })
-      .catch((e) => console.log(e));
+      const items = GU_DATA['DATA']
+      res.send(items)
   }
   catch(error){
       next(error);
   }
 }
+
+exports.getMarket = async (req, res, next) => {
+  try {
+      const items = MARKET_DATA['DATA']
+      res.send(items)
+  }
+  catch(error){
+      next(error);
+  }
+}
+
+exports.getPriceAll = async (req, res, next) => {
+  try {
+      const items = PRICE_DATA['DATA']
+      res.send(items)
+  }
+  catch(error){
+      next(error);
+  }
+}
+
+exports.getPriceAverage = async (req, res, next) => {
+  try {
+    const items = AVERAGE_DATA['DATA']
+    res.send(items)
+  }
+  catch(error){
+      next(error);
+  }
+}
+
+exports.getPriceByGu = async (req, res, next) => {
+  try {
+    const items = PRICE_DATA['DATA']
+    const guCode = req.params.guCode
+    const data = items.filter((item) => {
+      if(item.gu_code == guCode){
+        return item
+      }
+    })
+    res.send(data)
+  }
+  catch(error){
+      next(error);
+  }
+}
+
