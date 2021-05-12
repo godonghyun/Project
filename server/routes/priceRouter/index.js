@@ -13,11 +13,11 @@ router.get('/market', Controller.getMarket);
 /* Price 관련 API. 
  - /all = 모든 시장/마트의 가격 정보를 리턴합니다.
  - /average = 평균(Median 중간값을 사용) 가격 정보를 리턴합니다.
- - /:gu_code = 해당 '구'에 해당하는 시장/마트의 가격 정보를 리턴합니다.
+ - /detail/:guCode = 해당 '구'에 해당하는 시장/마트의 가격 정보를 리턴합니다.
 */
 
 router.get('/all', Controller.getPriceAll);
 router.get('/average', Controller.getPriceAverage);
-router.get('/:gu_code', Controller.getPriceByGu)
+router.get('/detail/:guCode', Controller.getPriceByGu)
 
 module.exports = router;
