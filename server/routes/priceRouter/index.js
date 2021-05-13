@@ -6,7 +6,10 @@ const Controller = require("./controller");
  - /guCode = 서울시의 모든 '구'에 대한 코드를 리턴합니다.
  - /market = 서울시의 모든 시장/마트에 대한 코드를 리턴합니다.
 */
-
+router.use(function (req, res, next) {
+    console.log(req);
+    next();
+})
 router.get('/guCode', Controller.getGuCode);
 router.get('/market', Controller.getMarket);
 
