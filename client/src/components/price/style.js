@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PricePage = styled.div`
     background-color: smokeshite;
@@ -27,7 +27,13 @@ export const PriceContainer = styled.div`
 export const PriceQueryContainer = styled.div`
     background-color: white;
     width: 100%;
-    height: 500px;
+    ${(props) => props.active ? css`
+        height: 500px;
+        transition: height 0.5s ease-out;
+    `: css`
+        height: 300px;
+        transition: height 0.5s ease-out 0.3s;
+    `}
     padding: 50px;
     border: 1px solid #ccc;
 `;
@@ -35,7 +41,7 @@ export const PriceQueryContainer = styled.div`
 export const PriceListContainer = styled.div`
     background-color: #fdfaf7;
     padding: 50px 50px 0px 50px;
-    width 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -52,7 +58,7 @@ export const Title = styled.div`
 
 export const Content = styled.div`
     font-size: 1.3em;
-    color: #blacka;
+    color: black;
     line-height: 30px;
 `;
 
@@ -110,6 +116,14 @@ export const FruitContainer = styled.tbody`
     border: 1px solid #ccc;
     background-color: white;
     margin: 0px 0px 50px 0px;
+
+    ${(props) => props.active ? css`
+        opacity: 1;
+        transition: opacity 0.5s ease-out 0.3s;
+    `: css`
+        opacity: 0;
+        transition: opacity 0.5s ease-out 0s;
+    `}
 `;
 
 export const FruitIconHolder = styled.td`
@@ -175,6 +189,8 @@ export const FruitEtc = styled.td`
     height: 20px;
     color: #666666;
 `;
+
+
 
 export const IconBox = styled.div`
     display: flex;

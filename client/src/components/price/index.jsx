@@ -8,7 +8,23 @@ const offset = {
     고등어: -855, '달걀(10개)': -627, '달걀(30개)': -627, 동태: -1710, 카트: -1767
 }
 
+// const tab = {
+//     averageTab: 
+// }
+
 function Intro() {
+    
+
+    return (
+        <S.PricePage>
+            <S.Banner />
+            <Price />
+            
+        </S.PricePage>
+    );
+}
+
+function Price(props) {
     const [query, setQuery] = useState("");
     const [average, setAverage] = useState([]);
     const handleQuery = e => {
@@ -26,7 +42,7 @@ function Intro() {
         }
     }, []);
     
-    let [queryResult, ] = query;
+    let [queryResult, ] = average;
     const getAble = (text) => {
         const filteredAverage = average.filter((item) => (
             item.name.indexOf(text) !== -1
@@ -45,48 +61,44 @@ function Intro() {
     }
 
     return (
-        <S.PricePage>
-            <S.Banner />
-            <S.PriceContainer>
-                <S.PriceQueryContainer>
-                    <S.Title>
-                        착한 물가 정보
+        <S.PriceContainer>
+            <S.PriceQueryContainer active={query !== ''}>
+                <S.Title>
+                    착한 물가 정보
                     </S.Title>
-                    <S.SearchContainer>
-                        <S.SearchBar>
-                            <BiSearchAlt style={{position:'absolute', margin: '17px 0px 0px 17px', color:'#4f5b66'}} />
-                            <S.SearchField type="text" name="search" value={query} onChange={handleQuery} />
-                            <S.SearchUl>
-                                {
-                                    query === '' || getAble(query).length===0 ? null
-                                        : getAble(query).map((item, i) => (
-                                            <S.SearchLi> {item.name} </S.SearchLi>
-                                        ))
-                                }
-                            </S.SearchUl>
-                        </S.SearchBar>
-                        {
-                            query === '' ? <S.Content>착한 소비를 위한 착한 가격</S.Content>
-                                : <FruitBox name={queryResult.name} price={queryResult.price} etc={queryResult.etc} unit={queryResult.unit}/>
-                        }
-                    </S.SearchContainer>
-                </S.PriceQueryContainer>
-                <S.PriceListContainer>
+                <S.SearchContainer>
+                    <S.SearchBar>
+                        <BiSearchAlt style={{ position: 'absolute', margin: '17px 0px 0px 17px', color: '#4f5b66' }} />
+                        <S.SearchField type="text" name="search" value={query} onChange={handleQuery} />
+                        <S.SearchUl>
+                            {
+                                query === '' || getAble(query).length === 0 ? null
+                                    : getAble(query).map((item, i) => (
+                                        <S.SearchLi> {item.name} </S.SearchLi>
+                                    ))
+                            }
+                        </S.SearchUl>
+                    </S.SearchBar>
                     {
-                        average.length === 0 ? null : (average.map((item, i) => (
-                                <FruitBox name={item.name} price={item.price} etc={item.etc} unit={item.unit}/>
-                            )
-                        ))
+                        average.length === 0 ? null : <FruitBox name={queryResult.name} price={queryResult.price} etc={queryResult.etc} unit={queryResult.unit} active={query !== ''} />
                     }
-                </S.PriceListContainer>
-            </S.PriceContainer>
-        </S.PricePage>
+                </S.SearchContainer>
+            </S.PriceQueryContainer>
+            <S.PriceListContainer>
+                {
+                    average.length === 0 ? null : (average.map((item, i) => (
+                        <FruitBox name={item.name} price={item.price} etc={item.etc} unit={item.unit} active='true' />
+                    )
+                    ))
+                }
+            </S.PriceListContainer>
+        </S.PriceContainer>
     );
 }
 
 function FruitBox(props) {
     return (
-        <S.FruitContainer>
+        <S.FruitContainer active={ props.active }>
             <tr>
                 <S.FruitInfoHolder rowSpan="3">
                     <S.FruitIcon style={{backgroundPositionY:offset[props.name]}}/>
